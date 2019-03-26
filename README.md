@@ -19,12 +19,33 @@ This software was published in Bioinformatics Journal: Flores, O., and Orozco, M
 
 ## Installation
 ---------------
+
+Instructions for linux systems:
+
+1- Install libcurl-devel system library required for Rcurl
 &nbsp;
 
-    if (!requireNamespace("BiocManager", quietly = TRUE))
-        install.packages("BiocManager")
-    BiocManager::install("nucleR", version = "3.8")
+    #OpenSuse
+    yast2 -i libcurl-devel
+    #Ubuntu
+    apt-get install libcurl4-gnutls-dev
 
+
+2- nucleR depends on several R packages. To install them run:
+&nbsp;
+
+    BiocManager::install('dplyr')
+    BiocManager::install('IRanges')
+    BiocManager::install('GenomicRanges')
+    BiocManager::install('ShortRead',ask = FALSE)
+    BiocManager::install('doParallel')
+    BiocManager::install('ggplot2')
+    BiocManager::install('magrittr')
+
+3- Install nucleR in R
+&nbsp;
+
+    BiocManager::install('nucleR')
 
 ## Usage 
 ---------------
